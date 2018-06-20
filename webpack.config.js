@@ -38,7 +38,7 @@ config.entry = {
 // 输出目录
 config.output = {
     path: path.resolve(__dirname, 'public'),
-    publicPath: "/",
+    publicPath: "https://dh9527.github.io/one-webpack/",
     filename: "assets/js/"+$fn_js,
     chunkFilename: "assets/js/"+$fn_js,
     // library: 'libraryname'
