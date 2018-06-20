@@ -1,0 +1,224 @@
+/*!
+ * Created by yinlu on 2018/5/23.
+ * Author : YinLu <306677639@qq.com>
+ */
+
+html,body,h1,h2,h3,h4,h5,h6,p,div,ul,li,dl,dt,dd {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-size: 14px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.maxW {
+    max-width: 1200px;
+    margin:{
+        left: auto;
+        right: auto;
+    }
+}
+
+/*  菜单展开按钮效果
+---------------------------------------------------------------------------------------------- */
+
+/* Examples 1 ----------------------------------------------------------------------------------------------*/
+
+@-moz-document url-prefix() {
+    .widget-yiming > span {
+        outline:1px solid transparent; /* firefox 锯齿现象 */
+    }
+}
+
+.widget-yiming {
+    position: fixed;
+    right: 25px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #666;
+    padding: 8px 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 99;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    align-content: space-between; /*stretch*/
+
+    > span {
+        position: relative;
+        display: block;
+        background-color: #666;
+        width: 100%;
+        height: 2px;
+        transform-origin:50% 50%;
+        transform: translateZ(0); /*Edge 不加会抖动*/
+        transition: {
+            property: opacity,transform-origin,transform;
+            duration: 500ms;
+            timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            delay: 0s;
+        }
+    }
+
+    $translateY: 40px / 2 - 8px - 1px - (2px / 2);
+    @mixin span-child($fh,$tx,$sx){
+        transform-origin: $tx ($fh*$translateY*-1);
+        transform: rotateZ(($fh*45deg)) scale($sx,1) translate(0,($fh*$translateY*-1));
+    }
+
+    /* 鼠标经过效果 */
+    &:hover > span:nth-child(1) {
+        @include span-child(-1,left,.5);
+    }
+    &:hover > span:nth-child(3) {
+        @include span-child(1,left,.5);
+    }
+
+    /* 鼠标点击效果 */
+    &.click > span:nth-child(1) {
+        @include span-child(-1,center,1);
+    }
+    &.click > span:nth-child(3) {
+        @include span-child(1,center,1);
+    }
+    &.click > span:nth-child(2) {
+        opacity: 0;
+    }
+
+}
+
+
+
+
+/* 菜单效果
+------------------------------------------------------------------------------------------
+ */
+.navbox {
+    position: fixed;
+    right: 25px;
+    top: 59px;
+    z-index: 100;
+}
+#nav {
+    perspective: 100px;
+
+    > li {
+        opacity: 0;
+        transform: rotateY(90deg);
+        transition: opacity .4s, transform .5s;
+        //transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+        &:not(:first-child) a:after {
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            left: 1em;
+            right: 1em;
+            top: 0;
+            background-color: #dddddd;
+        }
+    }
+
+    > li:nth-child(1) {
+        transition-delay: 200ms;
+        a {
+            border-top: 1px solid #666;
+        }
+    }
+
+    > li:nth-child(2) {
+        transition-delay: 100ms;
+    }
+
+    > li:nth-child(3) {
+        transition-delay: 0s;
+        a {
+            border-bottom: 1px solid #666;
+        }
+    }
+
+    a {
+        display: block;
+        position: relative;
+        color: #4d4d4d;
+        width: 120px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 16px;
+        background-color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 0 1em;
+        //border: 1px solid #666;
+        border-left: 1px solid #666;
+        border-right: 1px solid #666;
+        &:hover {
+            color: #7C12DB;
+        }
+    }
+
+}
+
+.navbox.expand {
+    #nav {
+        > li {
+            opacity: 1;
+            transform: none;
+        }
+
+        > li:nth-child(1) {
+            transition-delay: 0s;
+            a:before {
+                content: '';
+                display: block;
+                width: 38px;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                top: -2px;
+                background-color: white;
+            }
+        }
+
+        > li:nth-child(2) {
+            transition-delay: 100ms;
+        }
+
+        > li:nth-child(3) {
+            transition-delay: 200ms;
+        }
+    }
+}
+
+#zhezhao {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale3d(0,0,0);
+    background-color: #000000;
+    transition: {
+        property:all;
+        duration: 200ms;
+        timing-function: ease;
+        delay: 0s;
+    }
+}
+#zhezhao.scale {
+    opacity: .3;
+    transform: none;
+}

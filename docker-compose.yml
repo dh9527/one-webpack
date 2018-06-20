@@ -1,0 +1,30 @@
+version: '3.6'
+services:
+  web:
+    image: node:alpine
+    # container_name: web-demo
+    # restart: always
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    volumes:
+      - .:/var/www:cached
+    working_dir: /var/www
+    stdin_open: true
+    tty: true
+    # cap_add:
+    #   - ALL
+    # extra_hosts:
+    #   - "dockerhost:10.0.75.1"
+    # privileged: true
+    # network_mode: "host"
+    networks:
+      - qdnet
+      - hdnet
+
+networks:
+  qdnet:
+  hdnet:
+volumes:
+  web:
+#    name: web-data
