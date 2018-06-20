@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>GIT 备忘清单 - GIT CHEAT SHEET</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/assets/css/gitcs.css">
+</head>
+<body>
+
+    <div class="navbox">
+        <ul id="nav">
+            <li><a href="index.html">Git - 简明指南</a></li>
+            <li><a href="git-cheat-sheet.html">GIT 备忘清单</a></li>
+        </ul>
+    </div>
+    <div class="widget-yiming">
+        <span></span><span></span><span></span>
+    </div>
+
+    <div class="svgbox maxW">
+        <div class="of">
+
+        </div>
+
+        <div class="text-box valign-box">
+            <div>
+                <h2>GitHub</h2>
+                <h1>GIT 备忘清单</h1>
+            </div>
+        </div>
+        <span class="version">v 1.1.1</span>
+    </div>
+
+    <div class="description maxW">
+        Git是开源的分布式版本控制系统，便于在您的膝上电脑或桌面上进行GITHUB活动。该备忘录总结了常用的Git命令行指令以供快速引用。
+    </div>
+
+    <div id="content" class="maxW">
+        <div class="list-box">
+            <dl>
+                <dt>
+                    <h3>配置工具</h3>
+                    <p>为所有本地存储库配置用户信息</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git config --global user.name "[name]"</h5>
+                        <p>设置要提交到提交事务的名称</p>
+                    </div>
+                    <div>
+                        <h5>git config --global user.email "[email address]"</h5>
+                        <p>设置要提交到提交事务的电子邮件</p>
+                    </div>
+                    <div>
+                        <h5>git config --global color.ui auto</h5>
+                        <p>启用命令行输出的帮助着色</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>创建存储库</h3>
+                    <p>启动新的存储库或从现有URL获得一个存储库</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git init [project-name]</h5>
+                        <p>创建具有指定名称的新本地存储库</p>
+                    </div>
+                    <div>
+                        <h5>git clone [url]</h5>
+                        <p>下载项目及其整个版本历史</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>作出改变</h3>
+                    <p>审查编辑和CRAF提交事务</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git status</h5>
+                        <p>列出要提交的所有新的或修改的文件。</p>
+                    </div>
+                    <div>
+                        <h5>git diff</h5>
+                        <p>为版本控制准备快照文件</p>
+                    </div>
+                    <div>
+                        <h5>git add [file]</h5>
+                        <p>卸载文件，但保留其内容</p>
+                    </div>
+                    <div>
+                        <h5>git diff --staged</h5>
+                        <p>显示尚未上演的文件差异</p>
+                    </div>
+                    <div>
+                        <h5>git reset [file]</h5>
+                        <p>显示分级和最后一个文件版本之间的文件差异</p>
+                    </div>
+                    <div>
+                        <h5>git commit -m "[descriptive message]"</h5>
+                        <p>在版本历史记录中永久记录文件快照</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>分支组变化</h3>
+                    <p>命名一系列提交并结合完成的努力</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git branch</h5>
+                        <p>列出当前存储库中的所有本地分支</p>
+                    </div>
+                    <div>
+                        <h5>git branch [branch-name]</h5>
+                        <p>创建一个新的分支</p>
+                    </div>
+                    <div>
+                        <h5>git checkout [branch-name]</h5>
+                        <p>切换到指定的分支并更新工作目录</p>
+                    </div>
+                    <div>
+                        <h5>git merge [branch]</h5>
+                        <p>将指定的分支历史合并到当前分支中</p>
+                    </div>
+                    <div>
+                        <h5>git branch -d [branch-name]</h5>
+                        <p>删除指定的分支</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>重构文件名</h3>
+                    <p>重新定位和删除版本文件</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git rm [file]</h5>
+                        <p>删除工作目录中的文件并对删除阶段进行分级</p>
+                    </div>
+                    <div>
+                        <h5>git rm --cached [file]</h5>
+                        <p>从版本控制中移除文件，但在本地保存文件。</p>
+                    </div>
+                    <div>
+                        <h5>git mv [file-original] [file-renamed]</h5>
+                        <p>更改文件名并准备提交</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>抑制跟踪</h3>
+                    <p>排除临时文件和路径</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>*.log
+                            build/
+                            temp-*</h5>
+                        <p>一个名为.GiGiGNORE的文本文件抑制了意外版本控制与指定PATNS匹配的文件和路径</p>
+                    </div>
+                    <div>
+                        <h5>git ls-files --other --ignored --exclude-standard</h5>
+                        <p>列出该项目中所有被忽略的文件</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>保存碎片</h3>
+                    <p>搁置和还原不完整的变化</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git stash</h5>
+                        <p>临时存储所有修改后的跟踪文件</p>
+                    </div>
+                    <div>
+                        <h5>git stash pop</h5>
+                        <p>列出所有隐藏的变更集</p>
+                    </div>
+                    <div>
+                        <h5>git stash list</h5>
+                        <p>恢复最近隐藏的文件</p>
+                    </div>
+                    <div>
+                        <h5>git stash drop</h5>
+                        <p>丢弃最近隐藏的变更集</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>回顾历史</h3>
+                    <p>浏览和检查项目文件的演变</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git log</h5>
+                        <p>列出当前分支的版本历史记录</p>
+                    </div>
+                    <div>
+                        <h5>git log --follow [file]</h5>
+                        <p>列出文件的版本历史，包括重命名</p>
+                    </div>
+                    <div>
+                        <h5>git diff [first-branch]...[second-branch]</h5>
+                        <p>显示两个分支之间的内容差异</p>
+                    </div>
+                    <div>
+                        <h5>git show [commit]</h5>
+                        <p>输出指定提交的元数据和内容更改</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>重做约定</h3>
+                    <p>擦除错误和CRAF替换历史</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git reset [commit]</h5>
+                        <p>撤消所有提交（提交），保存本地更改。</p>
+                    </div>
+                    <div>
+                        <h5>git reset --hard [commit]</h5>
+                        <p>将所有历史和更改丢弃回指定的提交</p>
+                    </div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt>
+                    <h3>同步更改</h3>
+                    <p>注册存储库书签和交换版本历史</p>
+                </dt>
+                <dd>
+                    <div>
+                        <h5>git fetch [bookmark]</h5>
+                        <p>从存储库书签下载所有历史记录</p>
+                    </div>
+                    <div>
+                        <h5>git merge [bookmark]/[branch]</h5>
+                        <p>将书签的分支合并到当前本地分支中</p>
+                    </div>
+                    <div>
+                        <h5>git push [alias] [branch]</h5>
+                        <p>上传所有本地分支提交给GITHUB</p>
+                    </div>
+                    <div>
+                        <h5>git pull</h5>
+                        <p>下载书签历史并合并更改</p>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div id="footer" class="description maxW">
+        <p>本文档出自github -- GIT CHEAT SHEET 英文版。<br> 由 YinLu <306677639@qq.com> 整理排版,拷贝转载请注明来源！ => <a href="">GitHub仓库</a> </p>
+    </div>
+
+    <div id="zhezhao"></div>
+    <script src="/assets/js/vendors.js"></script>
+    <script src="/assets/js/gitcs.js"></script>
+</body>
+</html>

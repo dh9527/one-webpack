@@ -1,0 +1,10 @@
+{
+  "vendors.js": "/assets/js/vendors.js",
+  "gitg.css": "/assets/css/gitg.css",
+  "gitg.js": "/assets/js/gitg.js",
+  "gitcs.css": "/assets/css/gitcs.css",
+  "gitcs.js": "/assets/js/gitcs.js",
+  "assets/images/ggcs.png": "/assets/images/ggcs.png",
+  "assets/images/branches.png": "/assets/images/branches.png",
+  "assets/images/trees.png": "/assets/images/trees.png"
+}
