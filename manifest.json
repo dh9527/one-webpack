@@ -1,10 +1,10 @@
 {
-  "vendors.js": "/assets/js/vendors.js",
-  "gitg.css": "/assets/css/gitg.css",
-  "gitg.js": "/assets/js/gitg.js",
-  "gitcs.css": "/assets/css/gitcs.css",
-  "gitcs.js": "/assets/js/gitcs.js",
-  "assets/images/ggcs.png": "/assets/images/ggcs.png",
-  "assets/images/branches.png": "/assets/images/branches.png",
-  "assets/images/trees.png": "/assets/images/trees.png"
+  "vendors.js": "https://dh9527.github.io/one-webpack/assets/js/vendors.js",
+  "gitg.css": "https://dh9527.github.io/one-webpack/assets/css/gitg.css",
+  "gitg.js": "https://dh9527.github.io/one-webpack/assets/js/gitg.js",
+  "gitcs.css": "https://dh9527.github.io/one-webpack/assets/css/gitcs.css",
+  "gitcs.js": "https://dh9527.github.io/one-webpack/assets/js/gitcs.js",
+  "assets/images/ggcs.png": "https://dh9527.github.io/one-webpack/assets/images/ggcs.png",
+  "assets/images/branches.png": "https://dh9527.github.io/one-webpack/assets/images/branches.png",
+  "assets/images/trees.png": "https://dh9527.github.io/one-webpack/assets/images/trees.png"
 }
